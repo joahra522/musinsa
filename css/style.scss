@@ -59,11 +59,18 @@ img {
         &-type__button{
             display: flex;
             margin-left: auto;
-            width: 1.6rem;
-            height: 1.6rem;
+            width: 2.5rem;
+            height: 2.5rem;
             border: 1px solid $black;
+            background: red;
             box-sizing: border-box;
             flex-shrink: 0;
+        }
+        .view-block{
+            background: orange;
+        }
+        .view-list{
+            background: yellow;
         }
     }
     &-content{
@@ -81,21 +88,11 @@ img {
                     flex-flow: column;
                 }
                 &__img{
-                    overflow: hidden;
                     position: relative;
                     display: block;
                     padding-top: 100%;
                     background: #F1F1F1;
                     font-size: 0;
-                    .test{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        text-align: center;
-                        white-space: nowrap;
-                    }
                     img {
                         position: absolute;
                         top: 50%;
@@ -107,32 +104,32 @@ img {
                         transform: translate( -50%, -50%);
                     }
                 }
+                &__tag{
+                    position: absolute;
+                    bottom: -1.3rem;
+                    left: .9rem;
+                    color: $white;
+                    font-size: 0;
+                    height: 2.6rem;
+                    line-height: 2.6rem;
+                    > span {
+                        padding: 0 .6rem;
+                    }
+                    &-new{
+                        display: inline-block;
+                        font-size: 1.1rem;
+                        background: $orange;
+                    }
+                    &-single{
+                        display: inline-block;
+                        font-size: 1.1rem;
+                        background: $green;
+                    }
+                }
                 &-detail{
                     position: relative;
                     display:block;
                     padding: 2rem 1rem 1.9rem;
-                    &__tag{
-                        position: absolute;
-                        top: -1.3rem;
-                        left: .9rem;
-                        color: $white;
-                        font-size: 0;
-                        height: 2.6rem;
-                        line-height: 2.6rem;
-                        > span {
-                            padding: 0 .6rem;
-                        }
-                        &-new{
-                            display: inline-block;
-                            font-size: 1.1rem;
-                            background: $orange;
-                        }
-                        &-single{
-                            display: inline-block;
-                            font-size: 1.1rem;
-                            background: $green;
-                        }
-                    }
                     &__brand{
                         font-size: 1.1rem;
                         line-height: 1.6rem;
@@ -170,6 +167,57 @@ img {
                             color: $grey;
                             text-decoration: line-through;
                         }
+                    }
+                }
+            }
+        }
+    }
+    &.view-block{
+        .product-info{
+            .view_block{
+                background: orange;
+            }
+        }
+        .product-content{
+            .product-content-list{
+                display: block;
+                li{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.view-list{
+        .product-info{
+            .view_block{
+                background: skyblue;
+            }
+        }
+        .product-content{
+            .product-content-list{
+                flex-direction: column;
+                li{
+                    width: 100%;
+                }
+                .item{
+                    &__link{
+                        flex-flow: row;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    &__img{
+                        width: 17rem;
+                        height: 20.4rem;
+                        padding-top: 0;
+                    }
+                    &__tag{
+                        bottom: 0;
+                        left: 0;
+                    }
+                    &-detail{
+                        flex: 1;
+                        padding-left: 1.5rem;
                     }
                 }
             }
