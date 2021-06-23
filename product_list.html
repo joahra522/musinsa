@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Musinsa</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
-    <div class="product">
+    <!-- [D] 
+        default : product,
+        뷰타입 1단일때 view-block, 2단일때 view-list 클래스추가
+    -->
+    <div class="product defalut">
         <div class="product-info">
             <p class="product-info-num">상품 <strong>407,118</strong>개</p>
             <span class="product-info-noti">15분 전 갱신</span>
+            <!-- 버튼 -->
             <button type="button" class="product-info-type__button"><span class="blind">리스트 2단형</span></button>
-            <!-- [D] 1단일 경우에만  view_col1 클래스 추가 -->
-            <button type="button" class="product-info-type__button view_col1" style="display:none"><span class="blind">리스트 1단형</span></button>
+            <button type="button" class="product-info-type__button view-block" style="display:none"><span class="blind">리스트 1단형</span></button>
+            <button type="button" class="product-info-type__button view-list" style="display:none"><span class="blind">리스트 2단형 가로형</span></button>
+            <!-- //버튼 -->
         </div>
 
         <div class="product-content">
@@ -26,15 +33,16 @@
                             <!-- 상품 이미지 영역 -->
                             <span class="item__img">
                                 <img src="https://image.msscdn.net/images/goods_img/20180921/865862/865862_2_320.jpg" alt="">
+                                <span class="item__tag">
+                                    <span class="item__tag-new">new</span>
+                                    <span class="item__tag-single">무신사 단독</span>
+                                </span>
                             </span>
+                            
                             <!-- //상품 이미지 영역 -->
 
                             <!-- 상품 정보 영역 -->
                             <span class="item-detail">
-                                <span class="item-detail__tag">
-                                    <span class="item-detail__tag-new">new</span>
-                                    <span class="item-detail__tag-single">무신사 단독</span>
-                                </span>
                                 <span class="item-detail__brand">무신사 스탠다드</span>
                                 <span class="item-detail__name">[유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌 [유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌</span>
                                 <span class="price">
@@ -56,7 +64,7 @@
                 <li>
                     <!-- [D] 1단 일때 'item_type3' 클래스 추가 -->
                     <div class="item">
-                        <a href="#" title="상품상세">
+                        <a href="#" class="item__link" title="상품상세">
                             <!-- 상품 이미지 영역 -->
                             <span class="item__img">
                                 <img src="https://image.musinsa.com/images/goods_img/20180703/810034/810034_2_320.jpg" alt="">
@@ -80,5 +88,26 @@
             </ul>
         </div>
     </div>
+    <script>
+        $( '.product-info-type__button' ).on( 'click', function () {
+        var cont = $('.product');
+        var btn = $('.product-info-type__button');
+        
+        if ( $(cont).hasClass('defalut') ){
+            $(cont).removeClass('defalut');
+            $(cont).addClass('view-block');
+            $(btn).addClass('view-block');
+        } else if ( $(cont).hasClass('view-block')  ){
+            $(cont).removeClass('view-block');
+            $(cont).addClass('view-list');
+            $(btn).removeClass('view-block');
+            $(btn).addClass('view-list');
+        } else {
+            $(cont).removeClass('view-list');
+            $(cont).addClass('defalut');
+            $(btn).removeClass('view-list');
+        };
+        });
+    </script>
 </body>
 </html>
