@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* 색상 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: -apple-system-font,'Apple SD Gothic Neo',Helvetica,sans-serif;
+  color: #000;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 접근성 */
+.blind {
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+}
+/*# sourceMappingURL=common.css.map */

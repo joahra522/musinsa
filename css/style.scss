@@ -1,48 +1,9 @@
 @charset "utf-8";
 
-/* 색상 */
-$black : #000;
-$grey : #aaa;
-$red : #FF001F;
-$white : #fff;
-$orange : #FF9500;
-$green : #18A286;
 
-* {
-    margin: 0;
-    padding: 0;
-}
-html{
-    font-size:10px;
-}
-body{
-    font-family: -apple-system-font,'Apple SD Gothic Neo',Helvetica,sans-serif;
-    color: $black;
-}
-a{
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-}
-img {
-    max-width: 100%;
-}
-/* 접근성 */
-.blind{
-    visibility: hidden;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    font-size: 0;
-    line-height: 0;
-}
+$product: '.product';
 
-/* style */
-.product{
+#{$product}{
     &-info{
         display: flex;
         align-items: center;
@@ -80,7 +41,6 @@ img {
                 display: inline-block;
                 width: 50%;
             }
-            //공통
             .item{
                 position: relative;
                 &__link{
@@ -173,13 +133,13 @@ img {
         }
     }
     &.view-block{
-        .product-info{
+        #{$product}-info{
             .view_block{
                 background: orange;
             }
         }
-        .product-content{
-            .product-content-list{
+        #{$product}-content{
+            #{$product}-content-list{
                 display: block;
                 li{
                     width: 100%;
@@ -188,13 +148,8 @@ img {
         }
     }
     &.view-list{
-        .product-info{
-            .view_block{
-                background: skyblue;
-            }
-        }
-        .product-content{
-            .product-content-list{
+        #{$product}-content{
+            #{$product}-content-list{
                 flex-direction: column;
                 li{
                     width: 100%;
